@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 2px solid #555;
+    position: relative;
+    z-index: 10;
+}
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+nav {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+nav a:hover {
+    color: #ccc;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+h1, h2, h3, h5 {
+    color: #222;
+}
+.lead {
+    color: #555;
+}
+.destaque-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+}
+.destaque-card img {
+    min-height: 220px;
+    object-fit: cover;
+}
+.sobre-responsavel {
+    background-color: white;
+}
+.sobre-responsavel ul {
+    list-style: none;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+.sobre-responsavel li {
+    margin-bottom: 0.6rem;
+    color: #444;
+}
+.sobre-responsavel strong {
+    color: #222;
+}
+.detalhe {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
+}
+.detalhe-img {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #eaeaea;
+    min-height: 250px;
+    object-fit: contain;
+}
+.info {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+.info p {
+    margin-bottom: 0.9rem;
+    color: #444;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 2px solid #555;
+}
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem 0;
+        gap: 0;
+    }
+    nav.active {
+        display: flex;
+    }
+    nav a {
+        padding: 1rem;
+        border-bottom: 1px solid #555;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    nav a {
+        font-size: 0.85rem;
+    }
+}
