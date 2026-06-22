@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <div class="header-container container">
       <div class="logo">BH Shopping Guide</div>
       <button class="menu-toggle" id="menuToggle">☰</button>
       <nav id="navMenu">
         <a href="index.html">Home</a>
-        <a href="#masculino">Masculino</a>
-        <a href="#feminino">Feminino</a>
+        <a href="masculino.html">Masculino</a>
+        <a href="feminino.html">Feminino</a>
       </nav>
     </div>
   </header>
@@ -27,21 +28,46 @@
       <p class="lead">Aqui você localiza as melhores marcas de moda na capital mineira.</p>
     </section>
 
-    <!-- Cards Masculino -->
-    <section id="masculino" class="mb-5">
-      <h2 class="mb-1">Masculino</h2>
-      <p class="text-muted mb-3">Lojas de moda masculina em Belo Horizonte.</p>
-      <div id="lojas-masculinas" class="row gy-4">
-        <p class="text-muted">Carregando...</p>
+    <!-- Carrossel de Destaques -->
+    <section class="mb-5">
+      <h2 class="mb-3">Destaques</h2>
+      <div id="carrosselDestaques" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators" id="carrossel-indicators"></div>
+        <div class="carousel-inner" id="carrossel-inner">
+          <p class="text-muted">Carregando destaques...</p>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
       </div>
     </section>
 
-    <!-- Cards Feminino -->
-    <section id="feminino" class="mb-5">
-      <h2 class="mb-1">Feminino</h2>
-      <p class="text-muted mb-3">Lojas de moda feminina em Belo Horizonte.</p>
-      <div id="lojas-femininas" class="row gy-4">
-        <p class="text-muted">Carregando...</p>
+    <!-- Links para categorias -->
+    <section class="mb-5">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <a href="masculino.html" class="text-decoration-none">
+            <div class="categoria-card p-4 rounded shadow-sm text-center">
+              <div class="categoria-icon mb-2">👔</div>
+              <h3 class="h5 mb-1">Moda Masculina</h3>
+              <p class="text-muted mb-0">Ver todas as lojas masculinas</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="feminino.html" class="text-decoration-none">
+            <div class="categoria-card p-4 rounded shadow-sm text-center">
+              <div class="categoria-icon mb-2">👗</div>
+              <h3 class="h5 mb-1">Moda Feminina</h3>
+              <p class="text-muted mb-0">Ver todas as lojas femininas</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -63,6 +89,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
