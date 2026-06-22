@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Loja - BH Shopping Guide</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container container">
+      <div class="logo">BH Shopping Guide</div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="index.html#destaque">Destaque</a>
+        <a href="cadastro_lojas.html">Cadastrar Loja</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container py-4">
+    <section class="mb-4">
+      <h1>Cadastrar Nova Loja</h1>
+      <p class="text-muted">Preencha os dados abaixo para adicionar uma nova loja ao guia.</p>
+    </section>
+
+    <div id="mensagem-feedback"></div>
+
+    <div class="card shadow-sm p-4 mb-5">
+      <div id="campos-formulario">
+
+        <div class="mb-3">
+          <label for="nome" class="form-label fw-semibold">Nome da Loja *</label>
+          <input type="text" class="form-control" id="nome" placeholder="Ex: Nike, Zara, Hering..." required>
+        </div>
+
+        <div class="mb-3">
+          <label for="categoria" class="form-label fw-semibold">Categoria *</label>
+          <select class="form-select" id="categoria" required>
+            <option value="">Selecione uma categoria</option>
+            <option value="Moda Masculina">Moda Masculina</option>
+            <option value="Moda Feminina">Moda Feminina</option>
+            <option value="Moda Unissex">Moda Unissex</option>
+            <option value="Moda Esportiva">Moda Esportiva</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="descricaoCurta" class="form-label fw-semibold">Descrição Curta *</label>
+          <input type="text" class="form-control" id="descricaoCurta"
+                 placeholder="Uma frase resumindo a loja..." maxlength="100" required>
+          <div class="form-text">Máximo 100 caracteres. Aparece nos cards da Home.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="descricaoCompleta" class="form-label fw-semibold">Descrição Completa *</label>
+          <textarea class="form-control" id="descricaoCompleta" rows="4"
+                    placeholder="Descreva a loja com mais detalhes..." required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="endereco" class="form-label fw-semibold">Endereço</label>
+          <input type="text" class="form-control" id="endereco"
+                 placeholder="Shopping / Rua / Piso...">
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="telefone" class="form-label fw-semibold">Telefone</label>
+            <input type="text" class="form-control" id="telefone" placeholder="(31) 0000-0000">
+          </div>
+          <div class="col-md-6">
+            <label for="horario" class="form-label fw-semibold">Horário de Funcionamento</label>
+            <input type="text" class="form-control" id="horario" placeholder="Seg-Sáb: 10h às 22h">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="imagem" class="form-label fw-semibold">URL da Imagem</label>
+          <input type="text" class="form-control" id="imagem" placeholder="img/nome_arquivo.svg ou https://...">
+        </div>
+
+        <div class="mb-3">
+          <label for="preco" class="form-label fw-semibold">Faixa de Preço</label>
+          <input type="text" class="form-control" id="preco" placeholder="A partir de R$ 99,00">
+        </div>
+
+        <div class="mb-3">
+          <label for="tags" class="form-label fw-semibold">Tags</label>
+          <input type="text" class="form-control" id="tags"
+                 placeholder="esportivo, tênis, casual (separadas por vírgula)">
+          <div class="form-text">Separe as tags por vírgula.</div>
+        </div>
+
+        <div class="mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="destaque">
+            <label class="form-check-label fw-semibold" for="destaque">
+              Marcar como destaque (aparecerá no carrossel da Home)
+            </label>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-dark" id="btnCadastrar">Cadastrar Loja</button>
+          <a href="index.html" class="btn btn-outline-secondary">Cancelar</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-dark text-white">
+    <p>&copy; 2024 BH Shopping Guide. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="cadastro.js"></script>
+</body>
+</html>
