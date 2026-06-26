@@ -7,7 +7,7 @@ async function getFavoritos(usuarioId) {
 }
 
 async function toggleFavorito(lojaId) {
-  const usuario = Auth.getUsuario();
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente") || "null");
   if (!usuario) { window.location.href = 'login.html'; return; }
 
   const favs = await getFavoritos(usuario.id);
@@ -42,7 +42,7 @@ function criarBotaoFavorito(lojaId, favoritado) {
   btn.addEventListener('click', async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!Auth.isLogado()) { window.location.href = 'login.html'; return; }
+    if (!!!sessionStorage.getItem("usuarioCorrente")) { window.location.href = 'login.html'; return; }
     const agora = await toggleFavorito(lojaId);
     btn.innerHTML = agora ? '❤️' : '🤍';
     btn.classList.toggle('favoritado', agora);
