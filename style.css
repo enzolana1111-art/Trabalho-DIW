@@ -148,3 +148,33 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+.btn-favorito {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s;
+}
+.btn-favorito:hover { transform: scale(1.2); }
+
+nav a.nav-logout { color: #f87171; }
+nav a.nav-logout:hover { color: #fca5a5; }
+
+nav a.nav-ativo {
+  color: #ccc;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 2px;
+}
