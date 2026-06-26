@@ -1,306 +1,459 @@
 {
   "lojas": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Hugo Boss",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Roupas sociais e perfumes de luxo.",
       "descricaoCompleta": "Hugo Boss é referência em moda masculina de alto padrão, com peças elegantes para trabalho e ocasiões especiais. A marca alemã combina sofisticação e modernidade em cada coleção, oferecendo desde ternos impecáveis até perfumes exclusivos.",
-      "endereco": "",
+      "endereco": "Bh shopping, piso L3",
       "telefone": "(31) 4004-4000",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/hugo_boss.svg",
+      "imagem": "https://logos-world.net/wp-content/uploads/2020/09/Hugo-Boss-Symbol.jpg",
       "preco": "A partir de R$ 299,00",
-      "tags": ["luxo", "social", "masculino", "perfumes", "ternos"],
+      "tags": [
+        "luxo",
+        "social",
+        "masculino",
+        "perfumes",
+        "ternos"
+      ],
       "destaque": true
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Lacoste",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Polo e roupas esportivas com estilo.",
       "descricaoCompleta": "Lacoste oferece peças icônicas com o crocodilo, unindo conforto esportivo e elegância para o dia a dia. Fundada em 1933, a marca francesa é sinônimo de estilo clássico e qualidade premium em camisas polo, vestuário e acessórios.",
-      "endereco": "",
+      "endereco": "Bh shopping, piso BH- Diamond mall, Piso L3",
       "telefone": "(31) 4004-5000",
       "horario": "Seg-Sáb: 10h às 21h",
-      "imagem": "img/lacoste.svg",
+      "imagem": "https://th.bing.com/th/id/OIP.-ijNGcAOlTfaD-3sSszf1AHaGB?w=225&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "preco": "A partir de R$ 199,00",
-      "tags": ["polo", "esportivo", "clássico", "masculino", "francês"],
+      "tags": [
+        "polo",
+        "esportivo",
+        "clássico",
+        "masculino",
+        "francês"
+      ],
       "destaque": true
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Polo Ralph Lauren",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Linha premium de camisas e acessórios.",
-      "descricaoCompleta": "Polo Ralph Lauren apresenta roupas masculinas com estilo clássico e acabamento refinado para looks sofisticados. A marca americana é referência global em moda de alto padrão, com coleções que transitam entre o casual e o formal com elegância.",
-      "endereco": "",
+      "descricaoCompleta": "Polo Ralph Lauren apresenta roupas masculinas com estilo clássico e acabamento refinado para looks sofisticados.",
+      "endereco": "Não tem endereço fixo em Belo Horizonte. Marca vendida em lojas online. Não se esqueça de verificar se a loja digital é confiável.",
       "telefone": "(31) 4004-6000",
       "horario": "Seg-Dom: 11h às 20h",
-      "imagem": "img/polo.svg",
+      "imagem": "https://th.bing.com/th/id/OIP.fr6NxH2n9GmKwXfeeKPbmQHaEK?w=302&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "preco": "A partir de R$ 350,00",
-      "tags": ["premium", "americano", "clássico", "camisas", "acessórios"],
+      "tags": [
+        "premium",
+        "americano",
+        "clássico",
+        "camisas",
+        "acessórios"
+      ],
       "destaque": false
     },
     {
-      "id": 4,
-      "nome": "Zara",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Tendências da moda feminina para todas as ocasiões.",
-      "descricaoCompleta": "Zara oferece novidades da moda feminina com coleções que mudam frequentemente e peças modernas para várias ocasiões. A gigante espanhola do varejo de moda traz as últimas tendências das passarelas para o dia a dia com preços acessíveis.",
-      "endereco": "",
-      "telefone": "(31) 4004-7000",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/zara.svg",
-      "preco": "A partir de R$ 89,00",
-      "tags": ["tendência", "feminino", "versátil", "espanhol", "acessível"],
-      "destaque": true
-    },
-    {
-      "id": 5,
-      "nome": "Guess",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Looks jovens e cheios de personalidade.",
-      "descricaoCompleta": "Guess reúne peças cheias de atitude, com estilo jovem e moderno, ideal para fashionistas que buscam destaque. A marca americana é conhecida pelo apelo sensual e pelo uso de jeans de alta qualidade, além de bolsas e acessórios icônicos.",
-      "endereco": "",
-      "telefone": "(31) 4004-8000",
-      "horario": "Seg-Sáb: 10h às 21h",
-      "imagem": "img/guess.svg",
-      "preco": "A partir de R$ 199,00",
-      "tags": ["jovem", "feminino", "americano", "jeans", "atitude"],
-      "destaque": false
-    },
-    {
-      "id": 6,
-      "nome": "Vans",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Roupas casuais e calçados descolados.",
-      "descricaoCompleta": "Vans oferece estilo urbano para o público feminino, com tênis e roupas confortáveis para o dia a dia. A marca californiana nasceu do skate e conquistou o mundo com seu estilo alternativo e acessível, sendo ícone da cultura jovem urbana.",
-      "endereco": "",
-      "telefone": "(31) 4004-9000",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/vans.svg",
-      "preco": "A partir de R$ 129,00",
-      "tags": ["casual", "skate", "urbano", "feminino", "tênis"],
-      "destaque": false
-    },
-    {
-      "id": 7,
+      "id": "7",
       "nome": "New Era",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Bonés e acessórios streetwear icônicos.",
-      "descricaoCompleta": "New Era é a marca mais reconhecida no universo dos bonés e acessórios urbanos. Com presença forte na cultura do esporte e do streetwear, oferece produtos de alta qualidade com designs exclusivos para quem quer se destacar no dia a dia.",
-      "endereco": "",
+      "descricaoCompleta": "New Era é a marca mais reconhecida no universo dos bonés e acessórios urbanos. Com presença forte na cultura do esporte e do streetwear, oferece produtos de alta qualidade com designs exclusivos.",
+      "endereco": "Bh shopping, piso mariana- Diamond mall, piso L2",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/new_era.svg",
+      "imagem": "data:image/webp;base64,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",
       "preco": "A partir de R$ 149,00",
-      "tags": ["streetwear", "bonés", "urbano", "masculino", "acessórios"],
+      "tags": [
+        "streetwear",
+        "bonés",
+        "urbano",
+        "masculino",
+        "acessórios"
+      ],
       "destaque": false
     },
     {
-      "id": 8,
+      "id": "8",
       "nome": "Brooksfield",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Moda social masculina com sofisticação brasileira.",
       "descricaoCompleta": "Brooksfield é uma das marcas brasileiras mais tradicionais em moda social masculina. Conhecida pela qualidade dos seus tecidos e pelo corte impecável, é a escolha de quem busca elegância e conforto para o ambiente corporativo.",
-      "endereco": "",
+      "endereco": "Bh shopping, piso BH",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/brooksfield.svg",
+      "imagem": "data:image/webp;base64,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",
       "preco": "A partir de R$ 249,00",
-      "tags": ["social", "brasileiro", "corporativo", "masculino", "elegante"],
+      "tags": [
+        "social",
+        "brasileiro",
+        "corporativo",
+        "masculino",
+        "elegante"
+      ],
       "destaque": false
     },
     {
-      "id": 9,
+      "id": "9",
       "nome": "Nike",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Performance e estilo do maior nome do esporte.",
       "descricaoCompleta": "Nike é sinônimo de esporte e inovação. Com uma linha masculina completa que vai de tênis de alta performance a roupas casuais, a marca americana é presença obrigatória no guarda-roupa de quem valoriza conforto, tecnologia e estilo.",
-      "endereco": "",
+      "endereco": "Bh shopping, piso mariana",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/nike.svg",
+      "imagem": "https://th.bing.com/th/id/OIP.FVgI5qpvgcZXF9C336ubbwHaHa?w=227&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "preco": "A partir de R$ 199,00",
-      "tags": ["esportivo", "tênis", "masculino", "americano", "performance"],
+      "tags": [
+        "esportivo",
+        "tênis",
+        "masculino",
+        "americano",
+        "performance"
+      ],
       "destaque": true
     },
     {
-      "id": 10,
+      "id": "10",
       "nome": "Champion",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Streetwear clássico com DNA esportivo.",
-      "descricaoCompleta": "Champion nasceu no esporte universitário americano e se tornou ícone do streetwear mundial. Seus moletons, camisetas e calças combinam conforto, durabilidade e o estilo casual que conquistou gerações ao redor do mundo.",
-      "endereco": "",
+      "descricaoCompleta": "Champion nasceu no esporte universitário americano e se tornou ícone do streetwear mundial. Seus moletons, camisetas e calças combinam conforto, durabilidade e o estilo casual que conquistou gerações.",
+      "endereco": "Bh shopping, piso mariana",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/champion.svg",
+      "imagem": "https://th.bing.com/th/id/OIP.pRQK7jaymnBEZjQPPgr1lgHaGB?w=212&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "preco": "A partir de R$ 159,00",
-      "tags": ["streetwear", "moletom", "masculino", "americano", "casual"],
+      "tags": [
+        "streetwear",
+        "moletom",
+        "masculino",
+        "americano",
+        "casual"
+      ],
       "destaque": false
     },
     {
-      "id": 11,
+      "id": "11",
       "nome": "Aramis",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Moda masculina contemporânea e sofisticada.",
-      "descricaoCompleta": "Aramis é uma marca brasileira premium voltada para o homem moderno. Com coleções que equilibram o contemporâneo e o clássico, oferece desde peças casuais até looks completos para ocasiões formais, sempre com acabamento refinado.",
-      "endereco": "",
+      "descricaoCompleta": "Aramis é uma marca brasileira premium voltada para o homem moderno. Com coleções que equilibram o contemporâneo e o clássico, oferece desde peças casuais até looks completos para ocasiões formais.",
+      "endereco": "Bh shopping, piso BH- Pátio savassi, piso L2",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/aramis.svg",
+      "imagem": "https://aramisnova.vtexassets.com/assets/vtex/assets-builder/aramisnova.aramis-app/2.2.38/images/somos-a-aramis-2020___92392a8d9be01bb651abaf24b5377333.png",
       "preco": "A partir de R$ 189,00",
-      "tags": ["contemporâneo", "brasileiro", "premium", "masculino", "sofisticado"],
+      "tags": [
+        "contemporâneo",
+        "brasileiro",
+        "premium",
+        "masculino",
+        "sofisticado"
+      ],
       "destaque": false
     },
     {
-      "id": 12,
+      "id": "12",
       "nome": "Calvin Klein",
       "categoria": "Moda Masculina",
       "descricaoCurta": "Minimalismo e elegância em cada peça.",
-      "descricaoCompleta": "Calvin Klein é referência mundial em moda minimalista e sofisticada. A marca americana oferece uma linha masculina que vai do jeans ao formalwear, passando pela famosa linha de underwear, sempre com a sobriedade e o estilo que a tornaram lendária.",
-      "endereco": "",
+      "descricaoCompleta": "Calvin Klein é referência mundial em moda minimalista e sofisticada. A marca americana oferece uma linha masculina que vai do jeans ao formalwear, passando pela famosa linha de underwear.",
+      "endereco": "Bh shopping, piso BH- Diamond mall, piso L3",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/calvin_klein.svg",
+      "imagem": "https://th.bing.com/th/id/OIP.sVv2O_IhI0ZA_9ISrYVpRwHaEK?w=323&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "preco": "A partir de R$ 229,00",
-      "tags": ["minimalismo", "americano", "jeans", "masculino", "elegante"],
-      "destaque": true
-    },
-    
-    
-  
-    
-    {
-      "id": 13,
-      "nome": "Adidas",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Estilo esportivo com as três listras.",
-      "descricaoCompleta": "Adidas é uma das maiores marcas esportivas do mundo e conquistou o universo feminino com coleções que unem performance e moda. Das chuteiras às roupas de treino e tênis casuais, a marca alemã é presença garantida em qualquer guarda-roupa.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/adidas.svg",
-      "preco": "A partir de R$ 179,00",
-      "tags": ["esportivo", "tênis", "feminino", "alemão", "casual"],
-      "destaque": true
-    },
-    {
-      "id": 14,
-      "nome": "Tommy Hilfiger",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "O clássico americano com toque preppy.",
-      "descricaoCompleta": "Tommy Hilfiger é sinônimo do estilo preppy americano, com peças coloridas, de qualidade e cheias de personalidade. A linha feminina combina camisas polo, calças, vestidos e acessórios para um look sofisticado e ao mesmo tempo descontraído.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/tommy.svg",
-      "preco": "A partir de R$ 219,00",
-      "tags": ["preppy", "americano", "clássico", "feminino", "colorido"],
+      "tags": [
+        "minimalismo",
+        "americano",
+        "jeans",
+        "masculino",
+        "elegante"
+      ],
       "destaque": false
     },
     {
-      "id": 15,
-      "nome": "Levi's",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "O jeans mais icônico do mundo.",
-      "descricaoCompleta": "Levi's é a marca que inventou o jeans e segue sendo referência mundial. Com cortes modernos e clássicos para o público feminino, oferece calças, shorts, jaquetas e muito mais com a qualidade e o estilo que atravessam gerações.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/levis.svg",
-      "preco": "A partir de R$ 189,00",
-      "tags": ["jeans", "americano", "clássico", "feminino", "casual"],
-      "destaque": false
-    },
-    {
-      "id": 16,
-      "nome": "Animale",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Moda feminina brasileira com atitude.",
-      "descricaoCompleta": "Animale é uma das marcas femininas brasileiras mais premiadas e reconhecidas. Com coleções ousadas, sofisticadas e muito elegantes, a marca veste a mulher que sabe o que quer, do dia ao dia à noite, com muito estilo e personalidade.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/animale.svg",
-      "preco": "A partir de R$ 299,00",
-      "tags": ["brasileiro", "sofisticado", "feminino", "elegante", "premium"],
-      "destaque": true
-    },
-    {
-      "id": 17,
-      "nome": "Carolina Herrera",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Alta moda e perfumes de prestígio internacional.",
-      "descricaoCompleta": "Carolina Herrera é sinônimo de elegância e sofisticação no cenário da moda internacional. A marca venezuelana-americana é famosa por seus vestidos impecáveis, fragrâncias icônicas como o Good Girl e por vestir celebridades e primeiras-damas ao redor do mundo.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 21h",
-      "imagem": "img/carolina_herrera.svg",
-      "preco": "A partir de R$ 499,00",
-      "tags": ["luxo", "alta moda", "feminino", "perfumes", "internacional"],
-      "destaque": true
-    },
-    {
-      "id": 18,
-      "nome": "Diesel",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Denim premium com atitude e irreverência.",
-      "descricaoCompleta": "Diesel é a marca italiana que revolucionou o universo do denim com seus designs arrojados e irreverentes. A linha feminina inclui jeans de alta qualidade, camisetas, jaquetas e acessórios para quem não tem medo de se destacar.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/diesel.svg",
-      "preco": "A partir de R$ 349,00",
-      "tags": ["denim", "italiano", "premium", "feminino", "irreverente"],
-      "destaque": false
-    },
-    {
-      "id": 19,
-      "nome": "Under Armour",
-      "categoria": "Moda Feminina",
-      "descricaoCurta": "Performance feminina com tecnologia de ponta.",
-      "descricaoCompleta": "Under Armour é especialista em roupas esportivas de alta performance para o público feminino. Com tecidos tecnológicos que controlam temperatura e umidade, é a escolha de atletas e de quem leva o treino a sério sem abrir mão do estilo.",
-      "endereco": "",
-      "telefone": "",
-      "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/under_armour.svg",
-      "preco": "A partir de R$ 199,00",
-      "tags": ["esportivo", "performance", "feminino", "americano", "tecnologia"],
-      "destaque": false
-    },
-    {
-      "id": 20,
+      "id": "20",
       "nome": "Reserva",
       "categoria": "Moda Masculina",
       "descricaoCurta": "O casual premium do homem brasileiro.",
-      "descricaoCompleta": "Reserva é uma das marcas brasileiras mais amadas pelo público masculino. Com um estilo que mistura o casual e o sofisticado, suas camisas, camisetas e calças são reconhecidas pela qualidade do tecido, pelo humor nas estampas e pelo DNA carioca que conquistou o Brasil inteiro.",
-      "endereco": "",
+      "descricaoCompleta": "Reserva é uma das marcas brasileiras mais amadas pelo público masculino. Com um estilo que mistura o casual e o sofisticado, suas camisas, camisetas e calças são reconhecidas pela qualidade do tecido e pelo DNA carioca.",
+      "endereco": "Bh shopping, piso BH- Diamond mall, piso L2",
       "telefone": "",
       "horario": "Seg-Sáb: 10h às 22h",
-      "imagem": "img/reserva.svg",
+      "imagem": "https://th.bing.com/th/id/OIP.hTb8OBFp3w5dnXyUMBJ4pAHaFj?w=232&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "preco": "A partir de R$ 149,00",
-      "tags": ["brasileiro", "casual", "premium", "masculino", "carioca"],
+      "tags": [
+        "brasileiro",
+        "casual",
+        "premium",
+        "masculino",
+        "carioca"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "4",
+      "nome": "Zara",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Tendências da moda feminina para todas as ocasiões.",
+      "descricaoCompleta": "Zara oferece novidades da moda feminina com coleções que mudam frequentemente e peças modernas para várias ocasiões. A gigante espanhola do varejo de moda traz as últimas tendências das passarelas para o dia a dia.",
+      "endereco": "Pátio savassi, piso l2- Bh shopping, piso BH",
+      "telefone": "(31) 4004-7000",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "data:image/webp;base64,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",
+      "preco": "A partir de R$ 89,00",
+      "tags": [
+        "tendência",
+        "feminino",
+        "versátil",
+        "espanhol",
+        "acessível"
+      ],
+      "destaque": true
+    },
+    {
+      "id": "5",
+      "nome": "Guess",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Looks jovens e cheios de personalidade.",
+      "descricaoCompleta": "Guess reúne peças cheias de atitude, com estilo jovem e moderno, ideal para fashionistas que buscam destaque. A marca americana é conhecida pelo apelo sensual e pelo uso de jeans de alta qualidade.",
+      "endereco": "Bh shopping, piso BH- Diamond mall, piso L3",
+      "telefone": "(31) 4004-8000",
+      "horario": "Seg-Sáb: 10h às 21h",
+      "imagem": "https://th.bing.com/th/id/OIP.scxr_umWD94d6uRETVaHOAHaEK?w=289&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 199,00",
+      "tags": [
+        "jovem",
+        "feminino",
+        "americano",
+        "jeans",
+        "atitude"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "6",
+      "nome": "Vans",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Roupas casuais e calçados descolados.",
+      "descricaoCompleta": "Vans oferece estilo urbano para o público feminino, com tênis e roupas confortáveis para o dia a dia. A marca californiana nasceu do skate e conquistou o mundo com seu estilo alternativo e acessível.",
+      "endereco": "Bh shopping, piso mariana",
+      "telefone": "(31) 4004-9000",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "data:image/webp;base64,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",
+      "preco": "A partir de R$ 129,00",
+      "tags": [
+        "casual",
+        "skate",
+        "urbano",
+        "feminino",
+        "tênis"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "13",
+      "nome": "Adidas",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Estilo esportivo com as três listras.",
+      "descricaoCompleta": "Adidas é uma das maiores marcas esportivas do mundo e conquistou o universo feminino com coleções que unem performance e moda. Das chuteiras às roupas de treino e tênis casuais.",
+      "endereco": "Bh shopping, piso mariana- Diamond mall, piso L2",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "https://th.bing.com/th/id/OIP.tJ2FVrIB0dY7xHgMxHIHigHaHa?w=173&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 179,00",
+      "tags": [
+        "esportivo",
+        "tênis",
+        "feminino",
+        "alemão",
+        "casual"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "14",
+      "nome": "Tommy Hilfiger",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "O clássico americano com toque preppy.",
+      "descricaoCompleta": "Tommy Hilfiger é sinônimo do estilo preppy americano, com peças coloridas e de qualidade. A linha feminina combina camisas polo, calças, vestidos e acessórios para um look sofisticado e descontraído.",
+      "endereco": "Bh shopping, piso BH- Diamond mall, piso L3",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "https://th.bing.com/th/id/OIP.ZI8OKCbsmuCR-FtlNy8wuQHaEK?w=318&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 219,00",
+      "tags": [
+        "preppy",
+        "americano",
+        "clássico",
+        "feminino",
+        "colorido"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "15",
+      "nome": "Levi's",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "O jeans mais icônico do mundo.",
+      "descricaoCompleta": "Levi's é a marca que inventou o jeans e segue sendo referência mundial. Com cortes modernos e clássicos para o público feminino, oferece calças, shorts, jaquetas com a qualidade que atravessa gerações.",
+      "endereco": "Bh shopping, piso BH, Pátio Savassi, piso L2",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "https://th.bing.com/th/id/OIP._zTtNQxqoLN-csCaYmh4UwHaE8?w=284&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 189,00",
+      "tags": [
+        "jeans",
+        "americano",
+        "clássico",
+        "feminino",
+        "casual"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "16",
+      "nome": "Animale",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Moda feminina brasileira com atitude.",
+      "descricaoCompleta": "Animale é uma das marcas femininas brasileiras mais premiadas. Com coleções ousadas, sofisticadas e elegantes, a marca veste a mulher que sabe o que quer, do dia a dia à noite.",
+      "endereco": "Diamond mall, piso L2, Pátio savassi, piso L2",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "https://th.bing.com/th/id/OIP.F-pXnxTj_wgLbV8onf1sXAAAAA?w=154&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 299,00",
+      "tags": [
+        "brasileiro",
+        "sofisticado",
+        "feminino",
+        "elegante",
+        "premium"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "17",
+      "nome": "Carolina Herrera",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Alta moda e perfumes de prestígio internacional.",
+      "descricaoCompleta": "Carolina Herrera é sinônimo de elegância e sofisticação no cenário da moda internacional. Famosa por seus vestidos impecáveis e fragrâncias icônicas como o Good Girl.",
+      "endereco": "Diamond mall, piso L2",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 21h",
+      "imagem": "data:image/webp;base64,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",
+      "preco": "A partir de R$ 499,00",
+      "tags": [
+        "luxo",
+        "alta moda",
+        "feminino",
+        "perfumes",
+        "internacional"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "18",
+      "nome": "Diesel",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Denim premium com atitude e irreverência.",
+      "descricaoCompleta": "Diesel é a marca italiana que revolucionou o universo do denim com seus designs arrojados. A linha feminina inclui jeans de alta qualidade, camisetas, jaquetas e acessórios para quem não tem medo de se destacar.",
+      "endereco": "Bh shopping, piso BH",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "https://th.bing.com/th/id/OIP.hBlgNlSrh6MK3pbXj0U1tQHaGB?w=208&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 349,00",
+      "tags": [
+        "denim",
+        "italiano",
+        "premium",
+        "feminino",
+        "irreverente"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "19",
+      "nome": "Under Armour",
+      "categoria": "Moda Feminina",
+      "descricaoCurta": "Performance feminina com tecnologia de ponta.",
+      "descricaoCompleta": "Under Armour é especialista em roupas esportivas de alta performance para o público feminino. Com tecidos tecnológicos que controlam temperatura e umidade, é a escolha de atletas e de quem leva o treino a sério.",
+      "endereco": "Bh shopping, piso mariana",
+      "telefone": "",
+      "horario": "Seg-Sáb: 10h às 22h",
+      "imagem": "https://th.bing.com/th/id/OIP.4-vKaMrL6Y2Ou_DK8S4-QQHaEo?w=297&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "preco": "A partir de R$ 199,00",
+      "tags": [
+        "esportivo",
+        "performance",
+        "feminino",
+        "americano",
+        "tecnologia"
+      ],
       "destaque": false
     }
   ],
+  "usuarios": [
+    {
+      "id": "1",
+      "login": "admin",
+      "senha": "admin123",
+      "nome": "Administrador",
+      "email": "admin@bhshoppingguide.com",
+      "admin": true
+    },
+    {
+      "id": "2",
+      "login": "user",
+      "senha": "user123",
+      "nome": "Usuário Comum",
+      "email": "user@bhshoppingguide.com",
+      "admin": false
+    }
+  ],
+  "favoritos": [],
   "categorias": [
-    { "id": 1, "nome": "Moda Masculina", "descricao": "Roupas, calçados e acessórios voltados para o público masculino." },
-    { "id": 2, "nome": "Moda Feminina", "descricao": "Roupas, calçados e acessórios voltados para o público feminino." }
+    {
+      "id": "1",
+      "nome": "Moda Masculina",
+      "descricao": "Roupas, calçados e acessórios voltados para o público masculino."
+    },
+    {
+      "id": "2",
+      "nome": "Moda Feminina",
+      "descricao": "Roupas, calçados e acessórios voltados para o público feminino."
+    }
   ],
   "avaliacoes": [
-    { "id": 1, "lojaId": 1, "usuario": "Carlos M.", "nota": 5, "comentario": "Atendimento impecável e produtos de altíssima qualidade!" },
-    { "id": 2, "lojaId": 1, "usuario": "Rafael T.", "nota": 4, "comentario": "Produtos ótimos, mas o preço é bem salgado." },
-    { "id": 3, "lojaId": 2, "usuario": "Ana P.", "nota": 5, "comentario": "Adoro as polos Lacoste, qualidade incomparável!" },
-    { "id": 4, "lojaId": 4, "usuario": "Beatriz L.", "nota": 5, "comentario": "Sempre encontro algo novo e bonito na Zara!" },
-    { "id": 5, "lojaId": 5, "usuario": "Julia R.", "nota": 4, "comentario": "Peças cheias de estilo, adoro o visual jovem da Guess!" },
-    { "id": 6, "lojaId": 6, "usuario": "Pedro S.", "nota": 4, "comentario": "Tênis confortáveis e estilo inconfundível." }
+    {
+      "id": "1",
+      "lojaId": 1,
+      "usuario": "Carlos M.",
+      "nota": 5,
+      "comentario": "Atendimento impecável e produtos de altíssima qualidade!"
+    },
+    {
+      "id": "2",
+      "lojaId": 2,
+      "usuario": "Ana P.",
+      "nota": 5,
+      "comentario": "Adoro as polos Lacoste, qualidade incomparável!"
+    },
+    {
+      "id": "3",
+      "lojaId": 4,
+      "usuario": "Beatriz L.",
+      "nota": 5,
+      "comentario": "Sempre encontro algo novo e bonito na Zara!"
+    }
   ],
-  "favoritos": [
-    { "id": 1, "lojaId": 1 },
-    { "id": 2, "lojaId": 2 },
-    { "id": 3, "lojaId": 4 },
-    { "id": 4, "lojaId": 6 }
-  ]
+  "$schema": "./node_modules/json-server/schema.json"
 }
