@@ -1,37 +1,127 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalhes da Loja - BH Shopping Guide</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="header-container container">
-      <div class="logo">BH Shopping Guide</div>
-      <button class="menu-toggle" id="menuToggle">☰</button>
-      <nav id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="index.html#destaque">Destaque</a>
-      </nav>
+const API_LOJAS = 'http://localhost:3000/lojas';
+
+const LOJAS_FALLBACK = [
+  { "id": 1, "nome": "Hugo Boss", "categoria": "Moda Masculina", "descricaoCurta": "Roupas sociais e perfumes de luxo.", "descricaoCompleta": "Hugo Boss é referência em moda masculina de alto padrão, com peças elegantes para trabalho e ocasiões especiais.", "endereco": "Diamond Mall, piso 4 - Av. Olegário Maciel, 1600", "telefone": "(31) 4004-4000", "horario": "Seg-Sáb: 10h às 22h", "imagem": "img/hugo_boss.svg", "preco": "A partir de R$ 299,00", "tags": ["luxo", "social", "masculino"], "destaque": true },
+  { "id": 2, "nome": "Lacoste", "categoria": "Moda Masculina", "descricaoCurta": "Polo e roupas esportivas com estilo.", "descricaoCompleta": "Lacoste oferece peças icônicas com o crocodilo, unindo conforto esportivo e elegância para o dia a dia.", "endereco": "BH Shopping - Rodovia BR-356, 3049", "telefone": "(31) 4004-5000", "horario": "Seg-Sáb: 10h às 21h", "imagem": "img/lacoste.svg", "preco": "A partir de R$ 199,00", "tags": ["polo", "esportivo", "masculino"], "destaque": true },
+  { "id": 4, "nome": "Zara", "categoria": "Moda Feminina", "descricaoCurta": "Tendências da moda feminina para todas as ocasiões.", "descricaoCompleta": "Zara oferece novidades da moda feminina com coleções que mudam frequentemente.", "endereco": "BH Shopping - Rodovia BR-356, 3049", "telefone": "(31) 4004-7000", "horario": "Seg-Sáb: 10h às 22h", "imagem": "img/zara.svg", "preco": "A partir de R$ 89,00", "tags": ["tendência", "feminino", "versátil"], "destaque": true }
+];
+
+function getIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('id');
+}
+
+async function fetchItemById(id) {
+  try {
+    const response = await fetch(`${API_LOJAS}/${id}`);
+    if (!response.ok) throw new Error('Servidor indisponível');
+    return response.json();
+  } catch {
+    console.warn('JSON Server não encontrado. Usando dados locais.');
+    const loja = LOJAS_FALLBACK.find(l => l.id === Number(id));
+    if (!loja) throw new Error('Loja não encontrada');
+    return loja;
+  }
+}
+
+function renderDetails(loja) {
+  const container = document.getElementById('detalhe-container');
+  if (!container) return;
+
+  const usuario = JSON.parse(sessionStorage.getItem('usuarioCorrente') || 'null');
+
+  const tagsHtml = loja.tags
+    .map(tag => `<span class="badge bg-secondary me-1 mb-1">${tag}</span>`)
+    .join('');
+
+  container.innerHTML = `
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <img src="${loja.imagem}" alt="${loja.nome}"
+             class="img-fluid rounded w-100"
+             onerror="this.src='img/placeholder.svg'">
+      </div>
+      <div class="col-lg-7">
+        <span class="badge bg-secondary mb-2">${loja.categoria}</span>
+        <h1 class="mb-2">${loja.nome}</h1>
+        <p class="lead text-muted mb-2">${loja.descricaoCurta}</p>
+        <p class="fw-bold fs-5 mb-3">${loja.preco}</p>
+
+        <div class="info p-3 rounded bg-light mb-3">
+          <p><strong>Endereço:</strong> ${loja.endereco}</p>
+          <p><strong>Telefone:</strong> ${loja.telefone}</p>
+          <p><strong>Horário:</strong> ${loja.horario}</p>
+          <p class="mb-0"><strong>Sobre:</strong> ${loja.descricaoCompleta}</p>
+        </div>
+
+        <div class="mb-4">
+          <strong>Tags:</strong>
+          <div class="mt-1">${tagsHtml}</div>
+        </div>
+
+        <div class="d-flex gap-3 align-items-center">
+          <a href="javascript:history.back()" class="btn btn-dark">← Voltar</a>
+          ${usuario ? `<button id="btn-fav-detalhe" style="background:none;border:none;font-size:1.8rem;cursor:pointer;color:red;" title="Favoritar">🤍</button>` : ''}
+        </div>
+      </div>
     </div>
-  </header>
+  `;
 
-  <main class="container py-4">
-    <section id="detalhe-container" class="detalhe mb-5">
-      <p class="text-muted">Carregando detalhes da loja...</p>
-    </section>
-  </main>
+  if (usuario) {
+    const btnFav = document.getElementById('btn-fav-detalhe');
+    fetch(`http://localhost:3000/favoritos?usuarioId=${usuario.id}`)
+      .then(r => r.json())
+      .then(favs => {
+        const existente = favs.find(f => String(f.lojaId) === String(loja.id));
+        if (existente) btnFav.textContent = '❤️';
+        btnFav.addEventListener('click', async () => {
+          const favs2 = await fetch(`http://localhost:3000/favoritos?usuarioId=${usuario.id}`).then(r => r.json());
+          const ex2 = favs2.find(f => String(f.lojaId) === String(loja.id));
+          if (ex2) {
+            await fetch(`http://localhost:3000/favoritos/${ex2.id}`, { method: 'DELETE' });
+            btnFav.textContent = '🤍';
+          } else {
+            await fetch('http://localhost:3000/favoritos', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ usuarioId: usuario.id, lojaId: loja.id })
+            });
+            btnFav.textContent = '❤️';
+          }
+        });
+      });
+  }
+}
 
-  <footer class="text-center py-4 bg-dark text-white">
-    <p>&copy; 2024 BH Shopping Guide. Todos os direitos reservados.</p>
-  </footer>
+function showError(message) {
+  const container = document.getElementById('detalhe-container');
+  if (!container) return;
+  container.innerHTML = `
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Ops!</h4>
+      <p>${message}</p>
+      <a href="index.html" class="btn btn-dark mt-2">← Voltar para a Home</a>
+    </div>
+  `;
+}
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="auth.js"></script>
-  <script src="details.js"></script>
-</body>
-</html>
+async function init() {
+  const id = getIdFromUrl();
+  if (!id) { showError('Nenhum ID de loja foi informado na URL.'); return; }
+  try {
+    const loja = await fetchItemById(id);
+    renderDetails(loja);
+  } catch (error) {
+    console.error(error);
+    showError(`Loja com ID <strong>${id}</strong> não encontrada.`);
+  }
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+  }
+});
