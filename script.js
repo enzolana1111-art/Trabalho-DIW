@@ -1,162 +1,140 @@
-const API_URL = 'http://localhost:3000/lojas';
+const API_URL      = 'http://localhost:3000/lojas';
+const API_FAVS     = 'http://localhost:3000/favoritos';
 
-const LOJAS_FALLBACK = [
-  {
-    "id": 1,
-    "nome": "Hugo Boss",
-    "categoria": "Moda Masculina",
-    "descricaoCurta": "Roupas sociais e perfumes de luxo.",
-    "descricaoCompleta": "Hugo Boss é referência em moda masculina de alto padrão, com peças elegantes para trabalho e ocasiões especiais. A marca alemã combina sofisticação e modernidade em cada coleção, oferecendo desde ternos impecáveis até perfumes exclusivos.",
-    "endereco": "Diamond Mall, piso 4 - Av. Olegário Maciel, 1600 - Lourdes / BH Shopping, piso 4 - Rodovia BR-356, 3049 / BH Outlet, piso 2 - Rodovia BR-356, 7515",
-    "telefone": "(31) 4004-4000",
-    "horario": "Seg-Sáb: 10h às 22h",
-    "imagem": "img/hugo_boss.svg",
-    "preco": "A partir de R$ 299,00",
-    "tags": ["luxo", "social", "masculino", "perfumes", "ternos"],
-    "destaque": true
-  },
-  {
-    "id": 2,
-    "nome": "Lacoste",
-    "categoria": "Moda Masculina",
-    "descricaoCurta": "Polo e roupas esportivas com estilo.",
-    "descricaoCompleta": "Lacoste oferece peças icônicas com o crocodilo, unindo conforto esportivo e elegância para o dia a dia. Fundada em 1933, a marca francesa é sinônimo de estilo clássico e qualidade premium em camisas polo, vestuário e acessórios.",
-    "endereco": "BH Shopping, piso 3 - Rodovia BR-356, 3049 / Diamond Mall, piso 4 - Av. Olegário Maciel, 1600 / Pátio Savassi, piso L2 - Av. do Contorno, 6061",
-    "telefone": "(31) 4004-5000",
-    "horario": "Seg-Sáb: 10h às 21h",
-    "imagem": "img/lacoste.svg",
-    "preco": "A partir de R$ 199,00",
-    "tags": ["polo", "esportivo", "clássico", "masculino", "francês"],
-    "destaque": true
-  },
-  {
-    "id": 3,
-    "nome": "Polo Ralph Lauren",
-    "categoria": "Moda Masculina",
-    "descricaoCurta": "Linha premium de camisas e acessórios.",
-    "descricaoCompleta": "Polo Ralph Lauren apresenta roupas masculinas com estilo clássico e acabamento refinado para looks sofisticados. A marca americana é referência global em moda de alto padrão, com coleções que transitam entre o casual e o formal com elegância.",
-    "endereco": "Não possui endereço em Belo Horizonte. Sugestões de lojas online seguras: Drop, Farfetch e Dafiti.",
-    "telefone": "(31) 4004-6000",
-    "horario": "Seg-Dom: 11h às 20h (online)",
-    "imagem": "img/polo.svg",
-    "preco": "A partir de R$ 350,00",
-    "tags": ["premium", "americano", "clássico", "camisas", "acessórios"],
-    "destaque": false
-  },
-  {
-    "id": 4,
-    "nome": "Zara",
-    "categoria": "Moda Feminina",
-    "descricaoCurta": "Tendências da moda feminina para todas as ocasiões.",
-    "descricaoCompleta": "Zara oferece novidades da moda feminina com coleções que mudam frequentemente e peças modernas para várias ocasiões. A gigante espanhola do varejo de moda traz as últimas tendências das passarelas para o dia a dia com preços acessíveis.",
-    "endereco": "BH Shopping, piso 1 - Rodovia BR-356, 3049 / Boulevard Shopping, piso 2 - Avenida dos Andradas, 3000",
-    "telefone": "(31) 4004-7000",
-    "horario": "Seg-Sáb: 10h às 22h",
-    "imagem": "img/zara.svg",
-    "preco": "A partir de R$ 89,00",
-    "tags": ["tendência", "feminino", "versátil", "espanhol", "acessível"],
-    "destaque": true
-  },
-  {
-    "id": 5,
-    "nome": "Guess",
-    "categoria": "Moda Feminina",
-    "descricaoCurta": "Looks jovens e cheios de personalidade.",
-    "descricaoCompleta": "Guess reúne peças cheias de atitude, com estilo jovem e moderno, ideal para fashionistas que buscam destaque. A marca americana é conhecida pelo apelo sensual e pelo uso de jeans de alta qualidade, além de bolsas e acessórios icônicos.",
-    "endereco": "BH Outlet, piso 1 - Rodovia BR-356, 7515",
-    "telefone": "(31) 4004-8000",
-    "horario": "Seg-Sáb: 10h às 21h",
-    "imagem": "img/guess.svg",
-    "preco": "A partir de R$ 199,00",
-    "tags": ["jovem", "feminino", "americano", "jeans", "atitude"],
-    "destaque": false
-  },
-  {
-    "id": 6,
-    "nome": "Vans",
-    "categoria": "Moda Feminina",
-    "descricaoCurta": "Roupas casuais e calçados descolados.",
-    "descricaoCompleta": "Vans oferece estilo urbano para o público feminino, com tênis e roupas confortáveis para o dia a dia. A marca californiana nasceu do skate e conquistou o mundo com seu estilo alternativo e acessível, sendo ícone da cultura jovem urbana.",
-    "endereco": "BH Shopping, piso 1 - Rodovia BR-356, 3049 / Pátio Savassi, piso L2 - Av. do Contorno, 6061",
-    "telefone": "(31) 4004-9000",
-    "horario": "Seg-Sáb: 10h às 22h",
-    "imagem": "img/vans.svg",
-    "preco": "A partir de R$ 129,00",
-    "tags": ["casual", "skate", "urbano", "feminino", "tênis"],
-    "destaque": false
-  }
-];
-
-// ── Fetch ────────────────────────────────────────────────────────────────────
-async function fetchItems() {
+async function getFavoritosUsuario(usuarioId) {
   try {
-    const response = await fetch(API_URL);
-    if (!response.ok) throw new Error('Servidor indisponível');
-    return response.json();
-  } catch {
-    console.warn('JSON Server não encontrado. Usando dados locais.');
-    return LOJAS_FALLBACK;
+    const res = await fetch(`${API_FAVS}?usuarioId=${usuarioId}`);
+    return res.json();
+  } catch { return []; }
+}
+
+async function toggleFavorito(lojaId, btnEl) {
+  const usuario = Auth.getUsuario();
+  if (!usuario) { window.location.href = 'login.html'; return; }
+
+  const favs     = await getFavoritosUsuario(usuario.id);
+  const existente = favs.find(f => String(f.lojaId) === String(lojaId));
+
+  if (existente) {
+    await fetch(`${API_FAVS}/${existente.id}`, { method: 'DELETE' });
+    btnEl.textContent = '🤍';
+    btnEl.title = 'Adicionar aos favoritos';
+    btnEl.classList.remove('favoritado');
+  } else {
+    await fetch(API_FAVS, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ usuarioId: usuario.id, lojaId })
+    });
+    btnEl.textContent = '❤️';
+    btnEl.title = 'Remover dos favoritos';
+    btnEl.classList.add('favoritado');
   }
 }
 
-// ── Card ─────────────────────────────────────────────────────────────────────
-function createCard(item) {
+async function fetchLojas() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error();
+    return res.json();
+  } catch {
+    console.warn('JSON Server indisponível.');
+    return [];
+  }
+}
+
+function createCard(loja, favoritado = false) {
+  const usuario = Auth.getUsuario();
   const col = document.createElement('div');
   col.className = 'col-12 col-md-6 col-lg-4';
+
+  const btnFavHtml = usuario
+    ? `<button class="btn-favorito${favoritado ? ' favoritado' : ''}"
+              title="${favoritado ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}"
+              data-id="${loja.id}">
+         ${favoritado ? '❤️' : '🤍'}
+       </button>`
+    : '';
+
   col.innerHTML = `
-    <div class="card h-100 shadow-sm">
-      <img src="${item.imagem}" class="card-img-top img-fluid" alt="${item.nome}"
+    <div class="card h-100 shadow-sm position-relative">
+      ${btnFavHtml}
+      <img src="${loja.imagem}" class="card-img-top img-fluid" alt="${loja.nome}"
+           style="height:200px;object-fit:contain;background:#f5f5f5;padding:1rem;"
            onerror="this.src='img/placeholder.svg'">
       <div class="card-body d-flex flex-column">
-        <span class="badge bg-secondary mb-2 align-self-start">${item.categoria}</span>
-        <h3 class="card-title h5">${item.nome}</h3>
-        <p class="card-text text-muted mb-1">${item.descricaoCurta}</p>
-        <p class="fw-semibold mb-3">${item.preco}</p>
-        <a href="details.html?id=${item.id}" class="btn btn-dark mt-auto">Ver detalhes</a>
+        <span class="badge bg-secondary mb-2 align-self-start">${loja.categoria}</span>
+        <h3 class="card-title h5">${loja.nome}</h3>
+        <p class="card-text text-muted mb-1">${loja.descricaoCurta}</p>
+        <p class="fw-semibold mb-3">${loja.preco}</p>
+        <a href="details.html?id=${loja.id}" class="btn btn-dark mt-auto">Ver detalhes</a>
       </div>
-    </div>
-  `;
+    </div>`;
+
+  // Evento do coração
+  const btnFav = col.querySelector('.btn-favorito');
+  if (btnFav) {
+    btnFav.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFavorito(loja.id, btnFav);
+    });
+  }
+
   return col;
 }
 
-// ── Render ───────────────────────────────────────────────────────────────────
-function renderCards(items, containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  container.innerHTML = '';
-  if (items.length === 0) {
-    container.innerHTML = '<p class="text-muted">Nenhuma loja encontrada.</p>';
-    return;
-  }
-  items.forEach(item => container.appendChild(createCard(item)));
+function renderCarrossel(destaques) {
+  const inner      = document.getElementById('carrossel-inner');
+  const indicators = document.getElementById('carrossel-indicators');
+  if (!inner) return;
+
+  inner.innerHTML      = '';
+  indicators.innerHTML = '';
+
+  destaques.forEach((loja, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('data-bs-target', '#carrosselDestaques');
+    btn.setAttribute('data-bs-slide-to', i);
+    if (i === 0) { btn.classList.add('active'); btn.setAttribute('aria-current', 'true'); }
+    indicators.appendChild(btn);
+
+    const item = document.createElement('div');
+    item.className = `carousel-item destaque-card${i === 0 ? ' active' : ''}`;
+    item.innerHTML = `
+      <a href="details.html?id=${loja.id}" class="text-decoration-none text-dark">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-5">
+            <img src="${loja.imagem}" class="d-block w-100 carrossel-img"
+                 alt="${loja.nome}" onerror="this.src='img/placeholder.svg'">
+          </div>
+          <div class="col-md-7 p-4">
+            <span class="badge bg-secondary mb-2">${loja.categoria}</span>
+            <h2 class="h4 mb-2">${loja.nome}</h2>
+            <p class="text-muted mb-2">${loja.descricaoCurta}</p>
+            <p class="fw-semibold mb-3">${loja.preco}</p>
+            <span class="btn btn-dark btn-sm">Ver detalhes →</span>
+          </div>
+        </div>
+      </a>`;
+    inner.appendChild(item);
+  });
 }
 
-// ── Init ─────────────────────────────────────────────────────────────────────
 async function init() {
-  try {
-    const items = await fetchItems();
+  const lojas    = await fetchLojas();
+  const usuario  = Auth.getUsuario();
+  const favIds   = usuario ? (await getFavoritosUsuario(usuario.id)).map(f => String(f.lojaId)) : [];
+  const destaques = lojas.filter(l => l.destaque);
 
-    const masculinas = items.filter(i =>
-      i.categoria.toLowerCase().includes('masculina')
-    );
-    const femininas = items.filter(i =>
-      i.categoria.toLowerCase().includes('feminina')
-    );
-
-    renderCards(masculinas, 'lojas-masculinas');
-    renderCards(femininas, 'lojas-femininas');
-
-  } catch (error) {
-    console.error(error);
-  }
+  renderCarrossel(destaques);
 }
 
-// ── Menu mobile ───────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   init();
-
   const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
+  const navMenu    = document.getElementById('navMenu');
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
     navMenu.querySelectorAll('a').forEach(link =>
@@ -164,3 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 });
+
