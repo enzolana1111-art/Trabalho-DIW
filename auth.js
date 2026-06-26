@@ -40,11 +40,10 @@ function initLoginApp () {
         usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
         if (usuarioCorrenteJSON) {
             usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
-        } else {
-            window.location.href = LOGIN_URL;
         }
         document.addEventListener('DOMContentLoaded', function () {
             showUserInfo('userInfo');
+            atualizarMenu();
         });
     }
 };
@@ -180,4 +179,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-initLoginApp ();x
+function atualizarMenu() {
+    const nav = document.getElementById('navMenu');
+    if (!nav) return;
+
+    nav.querySelectorAll('.nav-dinamico').forEach(el => el.remove());
+
+    const usuario = sessionStorage.getItem('usuarioCorrente')
+        ? JSON.parse(sessionStorage.getItem('usuarioCorrente'))
+        : null;
+
+    if (usuario) {
+        const linkFav = document.createElement('a');
+        linkFav.href = 'favoritos.html';
+        linkFav.textContent = '♡ Favoritos';
+        linkFav.className = 'nav-dinamico';
+        nav.appendChild(linkFav);
+
+        if (usuario.tipo === 'ADMIN' || usuario.admin === true) {
+            const linkCad = document.createElement('a');
+            linkCad.href = 'cadastro_lojas.html';
+            linkCad.textContent = 'Gerenciar Lojas';
+            linkCad.className = 'nav-dinamico';
+            nav.appendChild(linkCad);
+        }
+
+        const btnLogout = document.createElement('a');
+        btnLogout.href = '#';
+        btnLogout.id = 'logout';
+        btnLogout.textContent = `Sair (${usuario.login})`;
+        btnLogout.className = 'nav-dinamico nav-logout';
+        btnLogout.addEventListener('click', (e) => { e.preventDefault(); logoutUser(); });
+        nav.appendChild(btnLogout);
+    } else {
+        const linkLogin = document.createElement('a');
+        linkLogin.href = 'login.html';
+        linkLogin.textContent = 'Entrar';
+        linkLogin.className = 'nav-dinamico';
+        nav.appendChild(linkLogin);
+    }
+}
+
+initLoginApp();
+
