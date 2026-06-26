@@ -403,14 +403,6 @@
   ],
   "usuarios": [
     {
-      "id": "1",
-      "login": "admin",
-      "senha": "admin123",
-      "nome": "Administrador",
-      "email": "admin@bhshoppingguide.com",
-      "admin": true
-    },
-    {
       "id": "2",
       "login": "user",
       "senha": "user123",
@@ -433,6 +425,14 @@
       "email": "pos@gmail.com",
       "tipo": "USUARIO",
       "id": "wGS2oImz4Js"
+    },
+    {
+      "login": "piu",
+      "senha": "piu123",
+      "nome": "eric",
+      "email": "piu@gmail.com",
+      "tipo": "USUARIO",
+      "id": "cK59hIXy8kM"
     }
   ],
   "favoritos": [],
