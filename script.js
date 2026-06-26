@@ -1,5 +1,5 @@
-const API_URL      = 'http://localhost:3000/lojas';
-const API_FAVS     = 'http://localhost:3000/favoritos';
+const API_LOJAS_URL = 'http://localhost:3000/lojas';
+const API_FAVS      = 'http://localhost:3000/favoritos';
 
 async function getFavoritosUsuario(usuarioId) {
   try {
@@ -9,7 +9,7 @@ async function getFavoritosUsuario(usuarioId) {
 }
 
 async function toggleFavorito(lojaId, btnEl) {
-  const usuario = Auth.getUsuario();
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente") || "null");
   if (!usuario) { window.location.href = 'login.html'; return; }
 
   const favs     = await getFavoritosUsuario(usuario.id);
@@ -34,7 +34,7 @@ async function toggleFavorito(lojaId, btnEl) {
 
 async function fetchLojas() {
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_LOJAS_URL);
     if (!res.ok) throw new Error();
     return res.json();
   } catch {
@@ -44,7 +44,7 @@ async function fetchLojas() {
 }
 
 function createCard(loja, favoritado = false) {
-  const usuario = Auth.getUsuario();
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente") || "null");
   const col = document.createElement('div');
   col.className = 'col-12 col-md-6 col-lg-4';
 
@@ -124,7 +124,7 @@ function renderCarrossel(destaques) {
 
 async function init() {
   const lojas    = await fetchLojas();
-  const usuario  = Auth.getUsuario();
+  const usuario  = JSON.parse(sessionStorage.getItem("usuarioCorrente") || "null");
   const favIds   = usuario ? (await getFavoritosUsuario(usuario.id)).map(f => String(f.lojaId)) : [];
   const destaques = lojas.filter(l => l.destaque);
 
@@ -142,4 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 });
+
 
