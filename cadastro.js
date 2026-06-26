@@ -57,7 +57,6 @@ async function cadastrarLoja() {
        <a href="details.html?id=${lojasCriada.id}" class="alert-link">Ver detalhes</a>`
     );
 
-    // Limpa o formulário
     document.getElementById('campos-formulario').querySelectorAll('input, textarea, select').forEach(el => {
       if (el.type === 'checkbox') el.checked = false;
       else el.value = '';
