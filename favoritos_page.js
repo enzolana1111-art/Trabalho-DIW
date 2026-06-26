@@ -2,7 +2,7 @@ const API_LOJAS = 'http://localhost:3000/lojas';
 const API_FAVS  = 'http://localhost:3000/favoritos';
 
 async function init() {
-  const usuario = Auth.getUsuario();
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente") || "null");
 
   if (!usuario) {
     window.location.href = 'login.html';
