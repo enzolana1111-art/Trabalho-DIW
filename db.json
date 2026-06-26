@@ -417,6 +417,22 @@
       "nome": "Usuário Comum",
       "email": "user@bhshoppingguide.com",
       "admin": false
+    },
+    {
+      "login": "OI",
+      "senha": "crioulo031",
+      "nome": "enzo lana",
+      "email": "oioi@gmail.com",
+      "tipo": "USUARIO",
+      "id": "1PfGnPHnmW8"
+    },
+    {
+      "login": "pos",
+      "senha": "oioioi13",
+      "nome": "enzo",
+      "email": "pos@gmail.com",
+      "tipo": "USUARIO",
+      "id": "wGS2oImz4Js"
     }
   ],
   "favoritos": [],
